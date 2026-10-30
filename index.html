@@ -131,6 +131,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .xai{margin-top:18px;border:1px solid var(--line);border-radius:9px;padding:16px 18px;background:var(--bg)}
 .xai h4,.xcols h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:10px}
 details.more{margin-top:2px}
+.roles{position:relative;display:grid;gap:12px;padding-left:22px}
+.roles::before{content:"";position:absolute;left:5px;top:9px;bottom:9px;width:1.5px;background:var(--line2)}
+.role{position:relative;display:flex}
+.role i{position:absolute;left:-22px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--page);border:2px solid var(--line2)}
+.role.now i{background:var(--accent);border-color:var(--accent)}
+.role h3.prev{font-weight:500;color:var(--muted);font-size:.98rem}
+.role .rd{display:block;font-size:.84rem;color:var(--muted);margin-top:1px}
+.promo{display:inline-block;vertical-align:2px;margin-left:8px;font-size:.7rem;font-weight:500;letter-spacing:.02em;color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent);border-radius:99px;padding:1px 8px}
 .xai h4.xai-t{font-family:var(--sans);font-size:1.05rem;font-weight:600;letter-spacing:-.01em;text-transform:none;color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:12px}
 details.more summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;margin-top:14px;font-weight:500;font-size:.9rem;color:var(--accent);border:1px solid var(--line2);border-radius:6px;padding:7px 12px}
 details.more summary::-webkit-details-marker{display:none}
@@ -489,8 +497,11 @@ table.t td.r,table.t th.r{text-align:right}
       <div class="xrow">
         <div class="when">May 2025 to present</div>
         <div>
-          <h3>Consultant, Strategy &amp; Growth</h3>
-          <p class="org">IXL Center, Cambridge, MA · Associate Consultant, Strategy &amp; Growth from May 2025, Consultant since May 2026</p>
+          <p class="org" style="margin-top:0;margin-bottom:12px">IXL Center, Cambridge, MA</p>
+          <div class="roles">
+            <div class="role now"><i aria-hidden="true"></i><div><h3>Consultant, Strategy &amp; Growth <span class="promo">Promoted</span></h3><span class="rd">May 2026 to present</span></div></div>
+            <div class="role"><i aria-hidden="true"></i><div><h3 class="prev">Associate Consultant, Strategy &amp; Growth</h3><span class="rd">May 2025 to May 2026</span></div></div>
+          </div>
           <div class="xai"><h4 class="xai-t">AI-powered delivery</h4>
             <ul class="bul">
               <li><b>Growth strategy.</b> Use AI for future foresight and scenario building, and to build business cases and working prototypes that clients can test before committing budget. The two demos on this page are examples.</li>
