@@ -46,7 +46,11 @@ a{color:inherit}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
 .inner{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 .topnav .inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
-.topnav .brand{font-weight:600;letter-spacing:-.01em}
+.topnav .brand{font-weight:600;letter-spacing:-.01em;min-width:0}
+.topnav .brand .m-lead{font-weight:400;color:var(--muted)}
+.topnav .brand .m-w{white-space:nowrap}
+@media (max-width:560px){.topnav .brand .m-lead{display:block;font-size:.78rem}.topnav .brand{font-size:.8rem;line-height:1.3}}
+.topnav .nav-r{display:flex;align-items:center;gap:28px;flex:0 0 auto}
 .topnav nav{display:flex;gap:22px;font-size:.88rem}
 .topnav nav a{text-decoration:none;color:var(--muted)}
 .topnav nav a:hover{color:var(--fg)}
@@ -411,9 +415,9 @@ table.t td.r,table.t th.r{text-align:right}
 
 <header class="topnav">
   <div class="inner">
-    <span class="brand">Ahmed El Harouchi</span>
-    <nav aria-label="Sections"><a href="#work">Selected work</a><a href="#experience">Experience</a><a href="#education">Education</a></nav>
-    <button class="btn sm" type="button" data-dl>Download resume</button>
+    <span class="brand"><span class="m-lead">Ahmed in three words:</span> <span class="m-w">Curious, Ambitious, &amp; Relentless</span></span>
+    <div class="nav-r"><nav aria-label="Sections"><a href="#work">Selected work</a><a href="#experience">Experience</a><a href="#education">Education</a></nav>
+    <button class="btn sm" type="button" data-dl>Download resume</button></div>
   </div>
 </header>
 
