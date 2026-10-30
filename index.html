@@ -13,7 +13,7 @@
    Layout: portfolio is one 1120px column; each demo opens as a full-screen app (sidebar + tabbed workspace) */
 :root{
   --bg:#ffffff; --fg:#0b0b0c; --muted:#62646b; --faint:#8b8d94; --line:#e5e5e8; --line2:#d4d4d8; --soft:#f6f6f7; --side:#fafafa;
-  --inv-bg:#0f2a4a; --inv-fg:#ffffff;
+  --inv-bg:#0f2a4a; --inv-fg:#ffffff; --page:#f4f6f9;
   --accent:#0f2a4a; --on-accent:#ffffff; --accent-soft:#e9eef5;
   --ok:#17733a; --ok-bg:#eaf5ee; --warn:#94560a; --warn-bg:#fdf3e3; --map0:#ebedf0; --map1:#c3d1e3; --map2:#6a88ae; --map3:#0f2a4a;
   color-scheme:light;
@@ -23,7 +23,7 @@
 
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.55}
+body{background:var(--page);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.55}
 h1,h2,h3,h4{margin:0;line-height:1.2;text-wrap:balance}
 p{margin:0}
 button,input,select{font:inherit;color:inherit}
@@ -42,8 +42,8 @@ a{color:inherit}
 .btn svg{width:16px;height:16px}
 
 /* ---------- Portfolio ---------- */
-.topnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.topnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--page);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--page)}
 .inner{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 .topnav .inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
 .topnav .brand{font-weight:600;letter-spacing:-.01em;min-width:0}
@@ -52,7 +52,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @media (max-width:560px){.topnav .brand .m-lead{display:block;font-size:.78rem}.topnav .brand{font-size:.8rem;line-height:1.3}}
 .topnav .nav-r{display:flex;align-items:center;gap:28px;flex:0 0 auto}
 .topnav nav{display:flex;gap:22px;font-size:.88rem}
-.topnav nav a{text-decoration:none;color:var(--muted)}
+.topnav nav a{text-decoration:none;color:var(--muted);padding:4px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.topnav nav a.on{color:var(--accent);border-bottom-color:var(--accent);font-weight:500}
 .topnav nav a:hover{color:var(--fg)}
 .hero{padding-block:72px 56px}
 .hero h1{font-size:clamp(2.4rem,6vw,3.8rem);font-weight:600;letter-spacing:-.03em}
@@ -91,7 +92,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .client:hover{background:var(--soft)}
 .js .client.pre{opacity:0;transform:translateY(8px)}
 .demos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.dcard{border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+.dcard{background:var(--bg);border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column;overflow:hidden;min-width:0}
 .dprev{background:var(--soft);border-bottom:1px solid var(--line);padding:22px 22px 0;height:210px;overflow:hidden}
 .mini{background:var(--bg);border:1px solid var(--line2);border-bottom:0;border-radius:8px 8px 0 0;height:100%;display:grid;grid-template-columns:58px 1fr;overflow:hidden}
 .mini .ms{background:var(--side);border-right:1px solid var(--line);padding:10px 8px;display:flex;flex-direction:column;gap:7px}
@@ -127,7 +128,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .xrow .when{font-size:.88rem;color:var(--muted)}
 .xrow h3{font-size:1.08rem;font-weight:600}
 .xrow .org{color:var(--muted);margin-top:2px}
-.xai{margin-top:18px;border:1px solid var(--line);border-radius:9px;padding:16px 18px;background:var(--side)}
+.xai{margin-top:18px;border:1px solid var(--line);border-radius:9px;padding:16px 18px;background:var(--bg)}
 .xai h4,.xcols h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:10px}
 details.more{margin-top:2px}
 .xai h4.xai-t{font-family:var(--sans);font-size:1.05rem;font-weight:600;letter-spacing:-.01em;text-transform:none;color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:12px}
@@ -426,7 +427,7 @@ table.t td.r,table.t th.r{text-align:right}
   <section class="hero"><div class="hero-grid"><div>
     <h1>Ahmed El Harouchi</h1>
     <p class="tag"><b>Growth Strategy and AI Implementation</b>, IXL Center</p>
-    <p class="sum">I work on growth strategy, helping companies decide where to play and how to win. I also lead business transformation projects that use AI as an enabler, from automated sales pipelines to AI agents built into finance and operations workflows. At IXL Center in Cambridge, Massachusetts, I work with banks, energy and industrial companies, universities, and city governments across North America, Latin America, Europe, Africa, and Asia. My background is in finance and analytics.</p>
+    <p class="sum">I work on growth strategy projects, where I help companies find new areas to grow into and build the capabilities they need to win there. I also lead business transformation projects that redesign how sales, marketing, and operations teams work, using AI as the enabler. At IXL Center in Cambridge, Massachusetts, I work with banks, energy and industrial companies, universities, and city governments across North America, Latin America, Europe, Africa, and Asia. I hold an MSc in Finance and a BS in Business Analytics.</p>
     <div class="hero-actions">
       <button class="btn" type="button" data-dl>Download resume (PDF)</button>
       <a class="btn ghost" href="#work">See selected work</a>
@@ -440,7 +441,7 @@ table.t td.r,table.t th.r{text-align:right}
     </div>
     <aside class="recog" aria-label="Recognition">
       <p class="label">Recognition</p>
-      <div class="rc"><b>Valedictorian</b><span>MS in Finance, ranked first in class</span></div>
+      <div class="rc"><b>Valedictorian</b><span>MSc in Finance, ranked first in class</span></div>
       <div class="rc"><b>Global Citizen Award</b><span>Awarded by the Hult undergraduate campus through a community vote</span></div>
       <div class="rc"><b>3.9 average GPA</b><span>Across graduate and undergraduate degrees</span></div>
       <div class="rc"><b>Full-tuition scholarships</b><span>For both degrees</span></div>
@@ -535,8 +536,8 @@ table.t td.r,table.t th.r{text-align:right}
   <section class="sec" id="education">
     <div class="sec-head"><div><p class="label">Education</p><h2>Education, skills, and languages</h2></div></div>
     <div class="edu">
-      <div><h3>MS in Finance, 2025</h3><p>Hult International Business School. Valedictorian, ranked first in class. 3.88 GPA, full-tuition scholarship.</p></div>
-      <div><h3>BBA in Business Analytics, 2024</h3><p>Hult International Business School. Student commencement speaker. 3.93 GPA, full-tuition scholarship.</p></div>
+      <div><h3>MSc in Finance, 2025</h3><p>Hult International Business School. Valedictorian, ranked first in class. 3.88 GPA, full-tuition scholarship.</p></div>
+      <div><h3>BS in Business Analytics, 2024</h3><p>Hult International Business School. Student commencement speaker. 3.93 GPA, full-tuition scholarship.</p></div>
       <div><h3>Skills</h3><p>Growth strategy, process redesign, benchmarking. SQL, Python, Tableau, Power BI, Excel, Claude Code, MCP.</p></div>
       <div><h3>Languages</h3><p>English, French, and Arabic.</p></div>
     </div>
@@ -1070,6 +1071,18 @@ const A2=(function(){
   return {start(){reset();render()},closeDrawer(){if(S.sel){S.sel=null;render()}}};
 })();
 route();
+/* Highlight the nav link for the section in view */
+(function(){
+  const links=[...document.querySelectorAll('.topnav nav a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  function update(){
+    const y=window.scrollY+120;let cur=null;
+    secs.forEach(s=>{if(s.offsetTop<=y)cur=s.id});
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)cur=secs[secs.length-1].id;
+    links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));
+  }
+  window.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);update();
+})();
 </script>
 
 </body>
