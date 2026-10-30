@@ -59,7 +59,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .contact a{text-decoration:none;color:var(--accent);border-bottom:1px solid var(--accent)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center}
 .dl-note{font-size:.82rem;color:var(--muted)}
-.kpi-head{margin-bottom:16px}
+.kpi-head{margin-bottom:16px;padding-top:48px}
+.hero{border-bottom:1px solid var(--line)}
+#experience,#education{border-top:1px solid var(--line);margin-top:64px}
+.xrow:last-child{border-bottom:0}
 .kpi-head h2{font-size:1.25rem;font-weight:600;letter-spacing:-.01em;margin-top:6px}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:56px;align-items:start}
 .recog{border-left:1px solid var(--line);padding-left:28px;display:grid;gap:18px;margin-top:10px}
@@ -459,7 +462,7 @@ table.t td.r,table.t th.r{text-align:right}
         <div class="dbody">
           <p class="label">Growth strategy · US bank</p>
           <h3>A bank-owned network that connects startups with investors</h3>
-          <p>The bank wanted to grow its deposits. We built a platform around a value proposition where everyone wins: startups want capital, investors want startups they can trust, and the bank wants deposits. Startups open a business account to join and get checked by the bank. Investors join free and see those vetted startups, ranked by how well each one fits what they look for.</p>
+          <p>The bank wanted to grow its deposits. We built a platform where everyone wins: startups get access to capital, investors get startups the bank has vetted, and the bank gets new deposits. Startups open a business account to join, and investors join free to see each startup ranked by fit.</p>
           <div class="dfoot"><button class="btn" type="button" data-open="growth-demo">Open demo</button><small>Simplified version for demo purposes only</small></div>
         </div>
       </article>
@@ -469,7 +472,7 @@ table.t td.r,table.t th.r{text-align:right}
         <div class="dbody">
           <p class="label">Business transformation · Certification body</p>
           <h3>One clear path for every student, from payment to certificate</h3>
-          <p>Student records sat in separate systems across many countries, and staff tracked progress by email. We mapped the full student journey and built one five-step pipeline connected to the learning platform, with a live dashboard for leadership. Staff now step in only when something looks off.</p>
+          <p>Student records sat in separate systems across many countries, and staff tracked progress by email. We mapped the full student journey and built one five-step pipeline connected to the learning platform. Leadership now has a live dashboard, and staff step in only when something looks off.</p>
           <div class="dfoot"><button class="btn" type="button" data-open="transformation-demo">Open demo</button><small>Simplified version for demo purposes only</small></div>
         </div>
       </article>
